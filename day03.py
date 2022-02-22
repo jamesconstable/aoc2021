@@ -6,13 +6,14 @@ Problem description: <https://adventofcode.com/2021/day/3>
 '''
 
 from collections import Counter
-import sys
 from typing import Iterable, List, Sequence, Tuple, TypeVar
 import unittest
 
 
 def part1(lines: Iterable[str]) -> int:
-    '''Solver for Day 3, part 1'''
+    '''
+    Solver for Day 3, part 1
+    '''
     data = list(line.strip() for line in lines)
     gamma = 0
     mask = 0
@@ -26,7 +27,9 @@ def part1(lines: Iterable[str]) -> int:
 
 
 def part2(lines: Iterable[str]) -> int:
-    '''Solver for Day 3, part 2'''
+    '''
+    Solver for Day 3, part 2
+    '''
     data: List[str] = [line.strip() for line in lines]
 
     # Filter for the oxygen generator rating
@@ -70,12 +73,14 @@ def ranked_frequency_at(i: int, data: Sequence[Sequence[Item]]) \
 
 
 class TestDay03(unittest.TestCase):
-    '''Example test cases for Day 3, as specified in the problem description'''
+    '''
+    Example test cases for Day 3, as specified in the problem description
+    '''
     # pylint: disable=missing-function-docstring
 
     def setUp(self):
-        self.data = (("00100 11110 10110 10111 10101 01111 "
-                      "00111 11100 10000 11001 00010 01010")
+        self.data = (('00100 11110 10110 10111 10101 01111 '
+                      '00111 11100 10000 11001 00010 01010')
                      .replace(' ', '\n ')
                      .split(' '))
 
@@ -84,14 +89,3 @@ class TestDay03(unittest.TestCase):
 
     def test_part2_example(self):
         self.assertEqual(part2(self.data), 230)
-
-
-if __name__ == '__main__':
-    match sys.argv[1:]:
-        case ['1']:
-            print(part1(sys.stdin))
-        case ['2']:
-            print(part2(sys.stdin))
-        case _:
-            print("Usage: ./day03.py <part_number> < input.txt",
-                  file=sys.stderr)

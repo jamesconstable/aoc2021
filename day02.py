@@ -5,13 +5,14 @@ Solvers and example test cases for Day 2 of the Advent of Code 2021.
 Problem description: <https://adventofcode.com/2021/day/2>
 '''
 
-import sys
 from typing import Iterable
 import unittest
 
 
 def part1(lines: Iterable[str]) -> int:
-    '''Solver for Day 2, part 1'''
+    '''
+    Solver for Day 2, part 1
+    '''
     horizontal = 0
     depth = 0
     for line in lines:
@@ -28,7 +29,9 @@ def part1(lines: Iterable[str]) -> int:
 
 
 def part2(lines: Iterable[str]) -> int:
-    '''Solver for Day 2, part 2'''
+    '''
+    Solver for Day 2, part 2
+    '''
     horizontal = 0
     depth = 0
     aim = 0
@@ -47,7 +50,9 @@ def part2(lines: Iterable[str]) -> int:
 
 
 class TestDay01(unittest.TestCase):
-    '''Example test cases for Day 2, as specified in the problem description'''
+    '''
+    Example test cases for Day 2, as specified in the problem description
+    '''
     # pylint: disable=missing-function-docstring
 
     def setUp(self):
@@ -65,14 +70,3 @@ class TestDay01(unittest.TestCase):
 
     def test_part2_example(self):
         self.assertEqual(part2(self.data), 900)
-
-
-if __name__ == '__main__':
-    match sys.argv[1:]:
-        case ['1']:
-            print(part1(sys.stdin))
-        case ['2']:
-            print(part2(sys.stdin))
-        case _:
-            print("Usage: ./day02.py <part_number> < input.txt",
-                  file=sys.stderr)
