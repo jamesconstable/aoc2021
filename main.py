@@ -10,6 +10,7 @@ import day01
 import day02
 import day03
 import day04
+import day05
 
 
 def exit_with_error(message: str, error_code: int = -1) -> None:
@@ -33,7 +34,7 @@ if __name__ == '__main__':
         # Insufficient arguments given
         show_usage_and_exit()
 
-    days = [day01, day02, day03, day04]
+    days = [day01, day02, day03, day04, day05]
     try:
         day = int(sys.argv[1])
     except ValueError:
