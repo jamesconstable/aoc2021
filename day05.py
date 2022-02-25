@@ -39,7 +39,6 @@ class Point:
     '''
     Represents a single (x, y) coordinate.
     '''
-    # pylint: disable=invalid-name
     x: int
     y: int
 
@@ -49,7 +48,6 @@ def points_between(start: Point, end: Point) -> Iterable[Point]:
     Iterates over the integral points between start and end (inclusive). Line
     must be either vertical, horizontal, or 45 degrees.
     '''
-    # pylint: disable=invalid-name
     x_step = sign(end.x - start.x)
     y_step = sign(end.y - start.y)
     x = start.x
