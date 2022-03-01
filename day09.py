@@ -16,10 +16,10 @@ def part1(lines: Iterable[str]) -> int:
     '''
     heights = [[int(i) for i in line.strip()] for line in lines]
     total_risk = 0
-    for y in range(len(heights)):
-        for x in range(len(heights[0])):
+    for y, row in enumerate(heights):
+        for x, height in enumerate(row):
             if is_low_point(heights, Coord(x, y)):
-                total_risk += heights[y][x] + 1
+                total_risk += height + 1
     return total_risk
 
 
