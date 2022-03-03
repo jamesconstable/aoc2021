@@ -16,6 +16,7 @@ import day07
 import day08
 import day09
 import day10
+import day11
 
 
 def exit_with_error(message: str, error_code: int = -1) -> None:
@@ -40,7 +41,7 @@ if __name__ == '__main__':
         show_usage_and_exit()
 
     days = [day01, day02, day03, day04, day05, day06, day07, day08, day09,
-            day10]
+            day10, day11]
     try:
         day = int(sys.argv[1])
     except ValueError:
