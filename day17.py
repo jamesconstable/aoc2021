@@ -8,7 +8,7 @@ Problem description: <https://adventofcode.com/2021/day/17>
 from collections import defaultdict
 import itertools
 import math
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, Iterator, List, Tuple
 import unittest
 
 
@@ -70,7 +70,7 @@ def read_input(lines: Iterable[str]) \
     return (x_lower, x_upper), (y_lower, y_upper)
 
 
-def valid_x_values_for_t(t: int, lower: int, upper: int) -> Iterable[int]:
+def valid_x_values_for_t(t: int, lower: int, upper: int) -> Iterator[int]:
     '''
     Returns an iterator over all initial x velocities that will place the probe
     within the target range at time `t`.
